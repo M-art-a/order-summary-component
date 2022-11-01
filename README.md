@@ -23,12 +23,12 @@ Users should be able to:
 
 ### Screenshot
 
-![](./design/desktop-preview.jpg)
+![](./mojscreen.png)
 
 ### Links
 
-- [Solution](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- [Solution](https://www.frontendmentor.io/solutions/order-summary-component-LOUjwMaUoP)
+- [Live Site URL:](https://spiffy-pika-0055d2.netlify.app)
 
 ## Built with
 
@@ -41,5 +41,4 @@ Users should be able to:
 ## Author
 
 - Website - [M-art-a](https://github.com/M-art-a)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
+- Frontend Mentor - [M-arta-a](https://www.frontendmentor.io/profile/M-art-a)
