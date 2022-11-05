@@ -1,10 +1,17 @@
-@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap');
 :root {
   --pale-blue: hsl(225, 100%, 94%);
   --bright-blue: hsl(245, 75%, 52%);
+  --bright-blue-shadow: hsla(245, 75%, 52%, 0.25);
   --very-pale-blue: hsl(225, 100%, 98%);
   --desaturated-blue: hsl(224, 23%, 55%);
   --dark-blue: hsl(223, 47%, 23%);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 h1 {
@@ -12,22 +19,27 @@ h1 {
   margin: 0;
   color: var(--dark-blue);
 }
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+}
 
 body {
-  margin: 0;
-  background: url("./images/pattern-background-desktop.svg");
+  background: url('./images/pattern-background-desktop.svg'), var(--pale-blue);
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: "Red Hat Display", sans-serif;
+  font-family: 'Red Hat Display', sans-serif;
+  text-align: center;
 }
 
 main {
-  width: 400px;
-  height: 650px;
+  width: 450px;
+  height: 700px;
   border-radius: 1rem;
   background-color: white;
   display: flex;
@@ -37,51 +49,61 @@ main {
 }
 
 .container {
-  padding: 32px;
+  padding: 2.5rem;
   display: flex;
   height: 100%;
+  width: 100%;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
-.order {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  color: gray;
+h1 {
+  font-size: 1.5rem;
 }
 
-.order p {
-  line-height: 1.7;
+p {
+  line-height: 1.6;
+  color: var(--desaturated-blue);
+  max-width: 350px;
 }
 
 .annualPlan {
   display: flex;
-  padding: 8px 16px;
-  gap: 16px;
+  padding: 1.5rem;
+  gap: 1.25rem;
   width: 100%;
   background-color: var(--very-pale-blue);
   border-radius: 1rem;
   align-items: center;
 }
 
-.annualPlan span {
-  color: gray;
-  font-weight: 400;
+.annualPlan div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
 h3 {
-  margin: 0;
+  font-size: 16px;
+}
+
+.annualPlan span {
+  color: var(--desaturated-blue);
+  font-weight: 400;
 }
 
 .change {
-  border: none;
   margin-left: auto;
   color: var(--bright-blue);
   font-weight: 700;
+  font-size: 14px;
   text-decoration: underline;
+  transition: all 0.3s ease-in-out;
+}
+.change:hover {
+  text-decoration: none;
+  opacity: 0.7;
 }
 
 .illustration-hero {
@@ -91,67 +113,78 @@ h3 {
 }
 
 .buttons {
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
 .button1 {
-  width: 70%;
-  background-color: blue;
-  border-radius: 1rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  padding: 1rem;
+  background-color: var(--bright-blue);
+  border-radius: 0.5rem;
   color: white;
-  box-shadow: 0 12px 25px grey;
-  width: 350px;
-  height: 40px;
-  border: none;
+  box-shadow: 0 15px 20px 0 var(--bright-blue-shadow);
   font-weight: 700;
-  font-size: large;
+  font-size: 16px;
+  transition: all 0.3s ease-in-out;
 }
-
 .button1:hover {
-  background-color: rgb(97, 97, 234);
+  opacity: 0.7;
 }
 
 .button2 {
-  display: flex;
-  justify-content: center;
-  color: grey;
-  margin-top: 30px;
-  border: none;
-  background-color: white;
+  color: var(--desaturated-blue);
+  margin-top: 2rem;
   font-weight: 700;
-  font-size: large;
+  font-size: 16px;
+  transition: all 0.3s ease-in-out;
 }
-
 .button2:hover {
-  color: black;
+  color: var(--dark-blue);
 }
 
-.change:hover {
-  text-decoration: none;
-  color: rgb(97, 97, 234);
-}
-@media (max-width: 400px) {
+@media (max-width: 460px) {
+  body {
+    padding: 1rem;
+    background: url('./images/pattern-background-mobile.svg'), var(--pale-blue);
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
   main {
-    width: 300px;
-    height: 500px;
+    width: auto;
+    height: auto;
   }
-  .button1 {
-    width: 222px;
-    height: 40px;
-    font-size: small;
-    margin-top: 15px;
-    border-radius: 0.5rem;
+  .container {
+    gap: 1rem;
   }
-  .button2 {
-    font-size: small;
+  h1 {
+    font-size: 1.125rem;
+  }
+  p {
+    font-size: 14px;
   }
   .annualPlan {
-    gap: 15px;
-    font-size: small;
+    padding: 1rem;
+    gap: 1rem;
+  }
+  .annualPlan div {
+    gap: 0;
+  }
+  h3 {
+    font-size: 14px;
+  }
+  .annualPlan span {
+    font-size: 14px;
+  }
+  .change {
+    font-size: 12px;
+  }
+  .button1,
+  .button2 {
+    font-size: 12px;
+  }
+  .button2 {
+    margin-top: 28px;
   }
 }
